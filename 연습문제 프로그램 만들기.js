@@ -56,3 +56,175 @@ if(hour < 12) {
 }
 
 // 홀수와 짝수를 구분하는 프로그램
+const a = Number(prompt('숫자를 입력해주세요', ''))
+
+if (a % 2 === 0) {
+  alert(`입력한 숫자 ${a}는 짝수입니다.`)
+} else {
+  alert(`입력한 숫자 ${a}는 홀수입니다.`) 
+}
+
+// 몇 월인지 확인, 계절을 구분하는 프로그램
+const a = Number(prompt('월을 입력해주세요', ''))
+
+if (a > 11 && a > 3) {
+  alert('겨울입니다.')
+} else if (a >= 10) {
+  alert('가을입니다.')
+} else if (a >= 6) {
+  alert('여름입니다.')
+} else {
+  alert('봄입니다.') 
+}
+//
+if (3 <= a && a <= 5) {
+  alert('봄입니다.')
+  } else if (6 <= a && a <= 8) {
+  alert('여름입니다.')
+  } else if (9 <= a && a <= 11) {
+  alert('가을입니다.')
+  } else {
+  alert('겨울입니다.')
+  }
+
+  // for 반복문과 배열
+const todo = ['우유 구매', '업무 메일 확인하기', '축구하기']
+
+for (let i = 0; i < todo.length; i++) {
+  console.log(`${i}번째 할 일: ${todo[i]}`)
+  
+}
+// 반대로 출력
+const todo = ['우유 구매', '업무 메일 확인하기', '축구하기']
+
+for (let i = todo.length - 1; i >= 0; i--) {
+  console.log(`${i}번째 할일: ${todo[i]}`)
+}
+
+// 
+const array = ['사과', '배', '귤', '바나나']
+
+console.log('# for in 반복문')
+for (const i in array) {
+  console.log(`${i}번째 과일: ${array[i]}`)
+}
+// for 반복문으로 변형
+const array = ['사과', '배', '귤', '바나나']
+
+console.log('# for반복문')
+for (let i = 0; i < array.length; i++) {
+  console.log(`${i}번째 과일: ${array[i]}`);
+}
+
+console.log('# for of 반복문');
+for (const i of array) {
+  console.log(i);
+}
+
+// for문을 이용해 array에 값 넣기
+const array = [] 
+ for (let i = 0; i < 3; i++) { 
+ array.push((i + 1) * 3) 
+ } 
+ console.log(array) 
+
+ // 1부터 100까지의 숫자를 곱한 값을 계산하는 프로그램
+ let output = 1
+
+for (let i = 1; i <= 100; i++) {
+  output *= i
+}
+console.log(`1~100의 숫자를 모두 곱하면, ${output}입니다.`);
+
+// 함수
+// 기본 형태 함수
+function f(x) {
+  return x * x 
+}
+console.log(f(3));
+
+// 윤년을 확인하는 함수
+function isLeapYear(year) {
+  return (year % 4 === 0) && (year % 100 !== 0) && (year % 400 === 0)
+}
+
+console.log(isLeapYear(2010));
+
+// a부터 b까지 더하는 함수
+function sumAll(a, b) {
+  let output = 0 // 초기값 설정
+  for (let i = a; i <= b; i++) {
+    output += i
+  }
+  return output
+}
+console.log(`1부터 2까지의 합: ${sumAll(1, 2)}`);
+
+// a부터 b까지 곱하는 함수
+function mulAll(a, b) {
+  let output = 1
+for (let i = a; i <= b; i++) {
+  output *= i
+  }
+  return output
+}
+console.log(`1부터 3까지의 곱: ${mulAll(1, 3)}`);
+
+// 최솟값을 구하는 함수
+function min(array) {
+  let output = array[0]
+  for (const item of array) {
+    if (output > item) {
+      output = item
+    }
+  }
+  return output
+}
+const testArray = [55, 273, 32, 103, 275, 24, 57]
+console.log(min(testArray));
+
+// 최댓값을 구하는 함수
+const testArray = [55, 273, 32, 103, 275, 24, 57]
+
+function max(array) {
+  let output = array[0]
+  for (const item of array) {
+    if (output < item) {
+      output = item
+    }
+  }
+  return output
+}
+console.log(max(testArray));
+
+// A부터 B까지 범위를 지정했을 때 범위 안의 숫자를 모두 곱하는 함수
+const multiplyAll = function (a, b) {
+  let output = 1
+  for (let i = a; i <= b; i++) {
+    output *= i
+  }
+  return output
+}
+console.log (multiplyAll(1, 2))
+console.log (multiplyAll(1, 3))
+
+// 매개변수로 max([1, 2, 3, 4])최댓값을 갖는 max 함수 만들기
+const max = function (array) {
+  let output = array[0]
+  for (const item of array) {
+    if (output < item)
+    output = item
+  }
+  return output
+}
+
+console.log(max[(1, 2, 3, 4)]);
+
+// 매개변수로 max(1, 2, 3, 4)와 같이 숫자를 배열을 받는 max()함수 만들기
+const array = [1, 2, 3, 4]
+
+function sample(...items) {
+  console.log(items);
+}
+
+sample(array)

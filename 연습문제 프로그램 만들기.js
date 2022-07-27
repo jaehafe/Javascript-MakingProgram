@@ -228,3 +228,68 @@ function sample(...items) {
 }
 
 sample(array)
+
+// 익명함수
+let 익명함수
+
+익명함수 = function () {
+  console.log('1번째 익명 함수입니다.');
+}
+익명함수 = function () {
+  console.log('2번째 익명 함수입니다.');
+}
+
+익명함수 ()
+
+// 
+const array = ['사과', '배', '귤', '바나나']
+
+// for (const i in array) {
+//   console.log(i);
+// }
+
+// ->
+array.forEach((x, i) => {
+  console.log(i);
+})
+
+// forEach 변환
+const array = ['사과', '배', '귤', '바나나']
+
+console.log('# for in 반복문');
+// for (const i in array) {
+//   console.log(i);
+// }
+// -> forEach 익명함수
+array.forEach(function(value, index, array) {
+  console.log(index);
+});
+
+console.log('#for of 반복문');
+// for(const i of array) {
+//   console.log(i);
+// }
+// -> forEach 화살표함수
+array.forEach((value, index, array) => {
+  console.log(value);
+})
+
+// 객체
+// 객체
+
+const array = [100, 20, '문자열', true, function () {}, () => {}]
+console.log(array[0])
+console.log(array[1])
+
+const object = {
+  name: '구름',
+  age: 7
+  
+}
+
+// 
+const object = {
+  name: '혼자 공부하는 파이썬',
+  price: 18000,
+  publisher: '한빛미디어'
+}

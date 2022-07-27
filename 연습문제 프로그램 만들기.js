@@ -293,3 +293,84 @@ const object = {
   price: 18000,
   publisher: '한빛미디어'
 }
+
+// 메서드와 this
+// 메서드와 this
+// calculator라는 객체를 만들고 세 메서드를 구현
+// read()에선 프롬프트 창을 띄우고 더할 값 두 개를 입력받습니다. 입력받은 값은 객체의 프로퍼티에 저장
+// sum()은 저장된 두 값의 합을 반환
+// mul()은 저장된 두 값의 곱을 반환
+let calculator = {
+  read() {
+    this.a = +prompt('첫 번째 값:', 0);
+    this.b = +prompt('두 번째 값:', 0);
+  },
+  sum() {
+    return this.a + this.b
+  },
+  mul() {
+    return this.a * this.b
+  }
+  
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+
+// 단계를 하나씩 거칠 때마다 배열 모습은 아래와 같이 변해야 함
+let styles = ["Jazz", "Blues"]; // Jazz, Blues
+styles.push("Rock-n-Roll"); // Jazz, Blues, Rock-n-Roll
+styles[Math.floor((styles.length - 1) / 2)] = "Classics"; // Jazz, Classics, Rock-n-Roll
+alert( styles.shift() ); // Classics, Rock-n-Roll
+styles.unshift("Rap", "Reggae"); // Rap, Reggae, Classics, Rock-n-Roll
+
+// 입력 양식: 글자 입력
+
+// <body>
+//   <input type="text" name="" id="">inch<br>
+//   <button></button>
+//   <p></p>
+// </body>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('input')
+  const button = document.querySelector('button')
+  const p = document.querySelector('p')
+
+  button.addEventListener('click', () => {
+    p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+  })
+})
+
+
+// 입력 양식: 글자 입력 -> p태그에 바로 변환: keyup 이벤트
+
+// <body>
+//   <input type="text" name="" id="">inch<br>
+//   <p></p>
+// </body>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('input')
+  const p = document.querySelector('p')
+
+  input.addEventListener('keyup', () => {
+    p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+  })
+})
+
+// change이벤트(값 입력을 마쳤다는 선언을 할 때): 엔터를 입력했을 때 값 변환
+// <body>
+//   <input type="text" name="" id="">inch<br>
+//   <p></p>
+// </body>
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('input')
+  const p = document.querySelector('p')
+
+  input.addEventListener('change', () => {
+    p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+  })
+})
+
+// select box(드롭다운)

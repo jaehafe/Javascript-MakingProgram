@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event</title>
+  <style>
+    #main-title {
+      display: flex;
+      background-color: yellow;
+      text-align: center;
+    }
+    .menu {
+      background-color: yellowgreen;
+    }
+    .menu-link {
+      margin: .1em;
+      padding: .3em;
+      color: #fff;
+      background: dodgerblue;
+      list-style: none;
+      text-decoration:none;
+    }
+    .menu-active {
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-title">Event</h1>
+
+  <nav class="menu">
+    <a href="#" class="menu-link" data-menu="1">menu 1</a>
+    <a href="#" class="menu-link" data-menu="2">menu 2</a>
+    <a href="#" class="menu-link" data-menu="3">menu 3</a>
+  </nav>
+
+  <script>
+    // 현재 활성화된 메뉴를 담을 변수
+    var currentMenu;
+    var menu = document.querySelector('.menu');
+
+    // 1번
+    // function activate(elem) {
+    //   elem.classList.add('menu-activate');
+    //   currentMenu = elem;
+    // }
+    // function inactivate(elem) {
+    //   elem.classList.remove('menu-activate');
+    // }
+
+    // function clickHandler(e) {
+    //   if (currentMenu) {
+    //     inactivate(currentMenu);
+    //   }
+    //   activate(e.target);
+    // }
+
+    // menu.addEventListener('click', clickHandler);
+    // activate(document.querySelectorAll('.menu-link')[0]);
+    
+    // 2번
+    function clickHandler(e) {
+      if (currentMenu) {
+        currentMenu.classList.remove('menu-active');
+      }
+      e.target.classList.add('menu-active');
+      currentMenu = e.target
+    }
+    menu.addEventListener('click', clickHandler);
+
+    // 3번 
+    // var currentMenu;
+    // var menuLinks = document.querySelectorAll('.menu-link');
+
+    // function clickMenuHandler() {
+    //   if (currentMenu) {
+    //     currentMenu.classList.remove('menu-active');
+    //   }
+    //   this.classList.add('menu-active');
+    //   currentMenu = this;
+    // }
+    // for (var i = 0; i < menuLinks.length; i++) {
+    //   menuLinks[i].addEventListener('click', clickMenuHandler)
+    // }
+  </script>
+</body>
+</html>

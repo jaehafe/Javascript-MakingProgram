@@ -42,33 +42,34 @@
     var menu = document.querySelector('.menu');
 
     // 1번
-    // function activate(elem) {
-    //   elem.classList.add('menu-activate');
-    //   currentMenu = elem;
-    // }
-    // function inactivate(elem) {
-    //   elem.classList.remove('menu-activate');
-    // }
+    function activate(elem) {
+      elem.classList.add('menu-activate');
+      currentMenu = elem;
+    }
+    
+    function inactivate(elem) {
+      elem.classList.remove('menu-activate');
+    }
 
-    // function clickHandler(e) {
-    //   if (currentMenu) {
-    //     inactivate(currentMenu);
-    //   }
-    //   activate(e.target);
-    // }
+    function clickMenuHandler(e) {
+      if (currentMenu) {
+        inactivate(currentMenu);
+      }
+      activate(e.target);
+    }
 
-    // menu.addEventListener('click', clickHandler);
-    // activate(document.querySelectorAll('.menu-link')[0]);
+    menu.addEventListener('click', clickMenuHandler);
+    activate(document.querySelectorAll('.menu-link')[0]);
     
     // 2번
-    function clickHandler(e) {
-      if (currentMenu) {
-        currentMenu.classList.remove('menu-active');
-      }
-      e.target.classList.add('menu-active');
-      currentMenu = e.target
-    }
-    menu.addEventListener('click', clickHandler);
+    // function clickMenuHandler(e) {
+    //   if (currentMenu) {
+    //     currentMenu.classList.remove('menu-active');
+    //   }
+    //   e.target.classList.add('menu-active');
+    //   currentMenu = e.target
+    // }
+    // menu.addEventListener('click', clickMenuHandler);
 
     // 3번 
     // var currentMenu;
@@ -81,9 +82,13 @@
     //   this.classList.add('menu-active');
     //   currentMenu = this;
     // }
+
     // for (var i = 0; i < menuLinks.length; i++) {
     //   menuLinks[i].addEventListener('click', clickMenuHandler)
     // }
+    // 4번
+
+
   </script>
 </body>
 </html>
